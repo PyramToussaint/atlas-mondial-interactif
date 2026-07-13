@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atlas Mondial Interactif</title>
+  <meta name="description" content="Recherchez un pays et consultez sa fiche d'identité générée à partir de l'API REST Countries.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M24 6 L27 21 L42 24 L27 27 L24 42 L21 27 L6 24 L21 21 Z" fill="currentColor"/>
+          <circle cx="24" cy="24" r="2.5" fill="var(--parchment)"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-title">Atlas Mondial</span>
+          <span class="brand-subtitle">Interactif</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="#search-panel">Rechercher</a></li>
+          <li><a href="#result-panel">Fiche pays</a></li>
+          <li><a href="#about">À propos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">Latitude · Longitude · Frontières</p>
+      <h1 id="hero-title">Chaque pays a une fiche.<br>Trouvez la vôtre.</h1>
+      <p class="hero-lede">Saisissez le nom d'un pays pour interroger l'API REST Countries en direct et faire apparaître son dossier&nbsp;: drapeau, capitale, population, région, monnaie et langues.</p>
+    </section>
+
+    <div class="workspace">
+
+      <section class="search-panel" id="search-panel" aria-labelledby="search-title">
+        <svg class="compass-rose" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <g stroke="currentColor" stroke-width="0.6">
+            <line x1="100" y1="8" x2="100" y2="192"/>
+            <line x1="8" y1="100" x2="192" y2="100"/>
+            <line x1="30" y1="30" x2="170" y2="170"/>
+            <line x1="170" y1="30" x2="30" y2="170"/>
+          </g>
+          <path d="M100 20 L112 100 L100 180 L88 100 Z" fill="currentColor" opacity="0.9"/>
+          <path d="M20 100 L100 88 L180 100 L100 112 Z" fill="currentColor" opacity="0.5"/>
+          <text x="100" y="16" text-anchor="middle" font-size="10" fill="currentColor">N</text>
+          <text x="100" y="196" text-anchor="middle" font-size="10" fill="currentColor">S</text>
+          <text x="6" y="103" text-anchor="middle" font-size="10" fill="currentColor">O</text>
+          <text x="194" y="103" text-anchor="middle" font-size="10" fill="currentColor">E</text>
+        </svg>
+
+        <h2 id="search-title" class="panel-title">Poste de recherche</h2>
+        <p class="panel-hint">Entrez un nom de pays en français ou en anglais.</p>
+
+        <form id="country-form" novalidate>
+          <div class="field">
+            <label for="country-input">Nom du pays</label>
+            <input
+              type="text"
+              id="country-input"
+              name="country"
+              placeholder="ex. Haïti, Japon, Brésil…"
+              autocomplete="off"
+              aria-describedby="country-error"
+            >
+            <p class="field-error" id="country-error" hidden></p>
+          </div>
+          <button type="submit" class="btn-submit">
+            <span>Explorer</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M13.5 3.5 18 8m0 0-4.5 4.5M18 8H2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+
+        <div class="loading" id="loading" hidden aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <span>Consultation des registres cartographiques…</span>
+        </div>
+
+        <div class="status-message" id="status-message" role="alert" hidden></div>
+      </section>
+
+      <section class="result-panel" id="result-panel" aria-labelledby="result-title" aria-live="polite">
+        <h2 id="result-title" class="sr-only">Fiche du pays</h2>
+
+        <div class="result
