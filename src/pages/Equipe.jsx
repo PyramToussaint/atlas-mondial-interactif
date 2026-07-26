@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./Header.css";
+import "./Equipe.css";
 
 const membres = [
   { nom: "Pyram Toussaint", github: "PyramToussaint", bio: "Développeur Frontend" },
