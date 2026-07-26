@@ -6,7 +6,7 @@ import "./App.css";
 function App() {
   return (
       <BrowserRouter>
-            <er />
+            <Header />
                   <main>
                           <Routes>
                                     <Route path="/" element={<h1>Accueil — en construction</h1>} />
