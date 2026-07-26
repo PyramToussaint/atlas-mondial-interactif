@@ -1,0 +1,41 @@
+/* src/pages/Equipe.css */
+
+.equipe-grille {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+        margin-top: 2rem;
+        }
+
+        .carte-membre {
+          background-color: var(--bg-card, #f5f5f5);
+            border-radius: 8px;
+              padding: 1.5rem;
+                text-align: center;
+                }
+
+                .carte-membre img {
+                  border-radius: 50%;
+                    margin-bottom: 0.8rem;
+                    }
+
+                    .carte-membre h2 {
+                      font-size: 1.1rem;
+                        color: var(--accent-color, #4dd0e1);
+                          margin: 0.3rem 0;
+                          }
+
+                          .carte-membre p {
+                            color: var(--text-color, #333333);
+                              font-size: 0.9rem;
+                                opacity: 0.85;
+                                }
+
+                                @media (max-width: 768px) {
+                                  .equipe-grille {
+                                      grid-template-columns: 1fr;
+                                        }
+                                        }
+                                        git add .
+                                        git commit -m "Corrige Equipe.jsx et ajoute Equipe.css"
+                
