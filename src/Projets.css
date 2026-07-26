@@ -1,0 +1,88 @@
+/* src/pages/Projets.css */
+
+.projets-page {
+  max-width: 1200px;
+    margin: 0 auto;
+      padding: 2rem;
+      }
+
+      .projets-page h1 {
+        text-align: center;
+          color: var(--accent-color, #4dd0e1);
+            margin-bottom: 1.5rem;
+            }
+
+            .filtres {
+              display: flex;
+                justify-content: center;
+                  gap: 0.8rem;
+                    flex-wrap: wrap;
+                      margin-bottom: 2rem;
+                      }
+
+                      .filtre-btn {
+                        padding: 0.5rem 1.2rem;
+                          border: 2px solid var(--accent-color, #4dd0e1);
+                            background-color: transparent;
+                              color: var(--text-color, #333333);
+                                border-radius: 20px;
+                                  cursor: pointer;
+                                    font-weight: 600;
+                                      transition: background-color 0.2s ease, color 0.2s ease;
+                                      }
+
+                                      .filtre-btn:hover {
+                                        background-color: rgba(77, 208, 225, 0.15);
+                                        }
+
+                                        .filtre-btn.active {
+                                          background-color: var(--accent-color, #4dd0e1);
+                                            color: #1e1e2f;
+                                            }
+
+                                            .projets-grid {
+                                              display: grid;
+                                                grid-template-columns: repeat(2, 1fr);
+                                                  gap: 1.5rem;
+                                                  }
+
+                                                  .projet-card {
+                                                    background-color: var(--bg-card, #f5f5f5);
+                                                      border-radius: 8px;
+                                                        padding: 1.5rem;
+                                                          position: relative;
+                                                          }
+
+                                                          .projet-card h2 {
+                                                            font-size: 1.2rem;
+                                                              margin: 0.5rem 0;
+                                                                color: var(--text-color, #1e1e2f);
+                                                                }
+
+                                                                .projet-card p {
+                                                                  color: var(--text-color, #333333);
+                                                                    opacity: 0.85;
+                                                                    }
+
+                                                                    .badge {
+                                                                      display: inline-block;
+                                                                        background-color: var(--accent-color, #4dd0e1);
+                                                                          color: #1e1e2f;
+                                                                            font-size: 0.75rem;
+                                                                              font-weight: 700;
+                                                                                padding: 0.2rem 0.6rem;
+                                                                                  border-radius: 12px;
+                                                                                  }
+
+                                                                                  .aucun-resultat {
+                                                                                    text-align: center;
+                                                                                      color: var(--text-color, #666666);
+                                                                                        margin-top: 2rem;
+                                                                                        }
+
+                                                                                        @media (max-width: 768px) {
+                                                                                          .projets-grid {
+                                                                                              grid-template-columns: 1fr;
+                                                                                                }
+                                                                                                }
+                                                                                                
